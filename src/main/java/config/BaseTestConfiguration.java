@@ -18,7 +18,7 @@ public class BaseTestConfiguration extends AllureSetup{
         propertiesFile.getBrowser();
         Configuration.browserSize = propertiesFile.getBrowserSize();
         Configuration.timeout = 8000;
-        Configuration.headless = false;
+        Configuration.headless = true;
 
         open(propertiesFile.getApplicationUrl());
     }

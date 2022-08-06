@@ -8,7 +8,7 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 public class AllureSetup implements BeforeAllCallback {
 
     @Override
-    public void beforeAll(ExtensionContext extensionContext) throws Exception {
+    public void beforeAll(ExtensionContext extensionContext) {
         SelenideLogger.addListener("AllureSelenide",
                 new AllureSelenide()
                         .screenshots(true)  //add screenshot as attachment

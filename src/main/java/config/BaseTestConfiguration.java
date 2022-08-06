@@ -8,8 +8,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.open;
 
-public class BaseTestConfiguration {
-    private Logger logger = LogManager.getLogger(BaseTestConfiguration.class.getName());
+public class BaseTestConfiguration extends AllureSetup{
+    private final Logger logger = LogManager.getLogger(BaseTestConfiguration.class.getName());
 
     @Step("Open browser and application")
     @BeforeEach

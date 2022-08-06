@@ -1,23 +1,22 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
+import config.AllureSetup;
 import config.BaseTestConfiguration;
 import io.qameta.allure.Flaky;
 import org.junit.Rule;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import pages.*;
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
+@ExtendWith({AllureSetup.class})
 public class End2EndTests extends BaseTestConfiguration {
 
-    @Rule
-    public RetryRule retry = new RetryRule(3);
-
     @DisplayName("Add random items to the cart > Delete items > Verify")
-    @Flaky
     @Test
     public void testAddItemsToCart() {
         //Test data
@@ -27,6 +26,7 @@ public class End2EndTests extends BaseTestConfiguration {
 
         HomePage.homeCategoryTab.shouldBe(Condition.visible).click();
         HomeOfferPage.viewAllBrandBtn.shouldBe(Condition.visible).click();
+        sleep(1000);
         HomeOfferPage.acquadiParmaBtn.shouldBe(Condition.visible).click();
 
         sleep(2000);

@@ -127,6 +127,8 @@
                 <version>3.0.0-M7</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
+                    <rerunFailingTestsCount>2</rerunFailingTestsCount>
+                    <failOnFlakeCount>2</failOnFlakeCount>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
